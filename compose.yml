@@ -16,12 +16,13 @@ services:
     healthcheck:
       test:
         - CMD
-        - curl
-        - '-f'
-        - 'https://localhost'
-      interval: 2s
+        - "wget" 
+        - "--server-response" 
+        - "--spider"
+        - "http://localhost"
+      interval: 5s
       timeout: 10s
-      retries: 15
+      retries: 3
 volumes:
   caddy_data:
   caddy_config:
