@@ -7,9 +7,9 @@ services:
     cap_add:
       - NET_ADMIN
     ports:
-      - "3535:80"
-      - "3536:443"
-      - "3536:443/udp"
+      - "80"
+      - "443"
+      - "443/udp"
     volumes:
       - caddy_data:/data
       - caddy_config:/config
