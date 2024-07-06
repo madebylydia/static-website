@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   caddy:
-    image: caddy:2.8
+    build: .
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
@@ -11,8 +11,6 @@ services:
       - "443"
       - "443/udp"
     volumes:
-      - "./Caddyfile:/etc/caddy/Caddyfile"
-      - "./src/lydia.moe:/srv/lydia.moe"
       - caddy_data:/data
       - caddy_config:/config
 
