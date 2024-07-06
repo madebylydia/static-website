@@ -11,8 +11,8 @@ services:
       - "443"
       - "443/udp"
     volumes:
-      - $PWD/Caddyfile:/etc/caddy/Caddyfile
-      - $PWD/src/lydia.moe:/srv/lydia.moe
+      - "$PWD/Caddyfile:/etc/caddy/Caddyfile"
+      - "$PWD/src/lydia.moe:/srv/lydia.moe"
       - caddy_data:/data
       - caddy_config:/config
 
