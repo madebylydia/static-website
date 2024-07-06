@@ -13,6 +13,15 @@ services:
     volumes:
       - caddy_data:/data
       - caddy_config:/config
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - '-f'
+        - 'http://localhost'
+      interval: 2s
+      timeout: 10s
+      retries: 15
 volumes:
   caddy_data:
   caddy_config:
